@@ -136,7 +136,7 @@ else                                                                            
             cmd_ram(Cmd)                                                                                                \
         }                                                                                                               \
     }                                                                                                                   \
-}\
+}                                                                                                                       \
 
 
 #define prepeare_label(Cmd)                                                                                             \

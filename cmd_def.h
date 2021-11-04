@@ -25,10 +25,10 @@
     if (el < 0)                                                 \
     {                                                           \
         el *= -1;                                               \
-        printf("-");                                                \
-    }                                                               \
+        printf("-");                                            \
+    }                                                           \
                                                                 \
-printf("%d.", el / my_cpu.registers[REG_PRESISION]);               \
+printf("%d.", el / my_cpu.registers[REG_PRESISION]);            \
 printf("%d\n", el % my_cpu.registers[REG_PRESISION]);
 
 DEF_CMD(POP, CMD_POP, 1,
