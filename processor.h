@@ -12,7 +12,7 @@
 typedef stack_type cpu_type;
 
 const int MAX_LABEL_ARG = 20;
-const int MAX_SIZE_LINE = 20;
+const int MAX_SIZE_LINE = 30;
 const int DEFAULT_CAPACITY_CODE = 10;
 const int DEFAULT_CAPACITY_LABELS = 10;
 

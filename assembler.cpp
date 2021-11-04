@@ -7,50 +7,100 @@
 #define command_none(operation) {0, 0, 0, operation}
 
 #define push_back_flag_value(type, value)                                                                               \
-if (my_assembler.code_capacity <= my_assembler.ip + sizeof(Flag) + sizeof(value))                                       \
-{                                                                                                                       \
-    if (my_assembler.code_capacity == 0)                                                                                \
+    if (my_assembler.code_capacity <= my_assembler.ip + sizeof(Flag) + sizeof(value))                                   \
     {                                                                                                                   \
-        my_assembler.code_capacity += DEFAULT_CAPACITY_CODE;                                                            \
+        if (my_assembler.code_capacity == 0)                                                                            \
+        {                                                                                                               \
+            my_assembler.code_capacity += DEFAULT_CAPACITY_CODE;                                                        \
+        }                                                                                                               \
+                                                                                                                        \
+        my_assembler.code = (char *)realloc(my_assembler.code, my_assembler.code_capacity * 2);                         \
+                                                                                                                        \
+        assert(my_assembler.code != nullptr);                                                                           \
+                                                                                                                        \
+        my_assembler.code_capacity *= 2;                                                                                \
     }                                                                                                                   \
                                                                                                                         \
-    my_assembler.code = (char *)realloc(my_assembler.code, my_assembler.code_capacity * 2);                             \
+    if (flag.CONST_FLAG != 0 || flag.REG_FLAG != 0 || flag.MEM_FLAG != 0)                                               \
+    {                                                                                                                   \
+        *(type *)(my_assembler.code + my_assembler.ip) = value;                                                         \
+        my_assembler.ip += sizeof(value);                                                                               \
+    }                                                                                                                   \
+
+
+#define prepeare_register(Cmd)                                                                                          \
+    char register_arg = 0;                                                                                              \
                                                                                                                         \
-    assert(my_assembler.code != nullptr);                                                                               \
-                                                                                                                        \
-    my_assembler.code_capacity *= 2;                                                                                    \
-}                                                                                                                       \
-                                                                                                                        \
-if (flag.CONST_FLAG != 0 || flag.REG_FLAG != 0 || flag.MEM_FLAG != 0)                                                   \
-{                                                                                                                       \
-    *(type *)(my_assembler.code + my_assembler.ip) = value;                                                             \
-    my_assembler.ip += sizeof(value);                                                                                   \
-}                                                                                                                       \
+    count_of_scan = sscanf(data->start, "%s %c%c", cmd, &register_arg, &type);                                          \
+    if (register_arg < 'a' || register_arg > 'z' || count_of_scan != 3)                                                 \
+    {                                                                                                                   \
+        my_assembler.state = STOP_UNDECLARED_ASSEMBLER;                                                                 \
+        break;                                                                                                          \
+    }                                                                                                                   \
+    else                                                                                                                \
+    {                                                                                                                   \
+        cmd_reg(Cmd)                                                                                                    \
+    }
 
 
 #define cmd_reg(Cmd)                                                                                                    \
-Flag flag = command_reg(CMD_##Cmd);                                                                                     \
-*(Flag *)(my_assembler.code + (my_assembler.ip) ++) = flag;                                                             \
-push_back_flag_value(char, (char)(register_arg - 'a'));
+    Flag flag = command_reg(CMD_##Cmd);                                                                                 \
+    *(Flag *)(my_assembler.code + (my_assembler.ip) ++) = flag;                                                         \
+    push_back_flag_value(char, (char)(register_arg - 'a'));
 
 
 #define cmd_reg_mem(Cmd)                                                                                                \
-if (register_arg < 'a' || register_arg > 'z')                                                                           \
-{                                                                                                                       \
-    my_assembler.state = STOP_UNDECLARED_ASSEMBLER;                                                                     \
-    break;                                                                                                              \
-}                                                                                                                       \
+    if (register_arg < 'a' || register_arg > 'z')                                                                       \
+    {                                                                                                                   \
+        my_assembler.state = STOP_UNDECLARED_ASSEMBLER;                                                                 \
+        break;                                                                                                          \
+    }                                                                                                                   \
                                                                                                                         \
-Flag flag = command_reg_mem(CMD_##Cmd);                                                                                 \
-*(Flag *)(my_assembler.code + (my_assembler.ip) ++) = flag;                                                             \
-push_back_flag_value(char, char(register_arg - 'a'))                                                                    \
-push_back_flag_value(int, memory_arg);                                                                                  \
+    Flag flag = command_reg_mem(CMD_##Cmd);                                                                             \
+    *(Flag *)(my_assembler.code + (my_assembler.ip) ++) = flag;                                                         \
+    push_back_flag_value(char, char(register_arg - 'a'))                                                                \
+    push_back_flag_value(int, memory_arg);                                                                              \
+
+
+#define prepeare_ram(Cmd)                                                                                               \
+    int memory_arg = 0;                                                                                                 \
+    char register_arg = 0;                                                                                              \
+    count_of_scan = sscanf(data->start, "%s [%c%c + %d]", cmd, &register_arg, &type, &memory_arg);                      \
+                                                                                                                        \
+    if (count_of_scan == 4)                                                                                             \
+    {                                                                                                                   \
+        cmd_reg_mem(Cmd)                                                                                                \
+    }                                                                                                                   \
+                                                                                                                        \
+    else                                                                                                                \
+    {                                                                                                                   \
+        count_of_scan = sscanf(data->start, "%s [%d + %c%c]", cmd, &memory_arg, &register_arg, &type);                  \
+        if (count_of_scan == 4)                                                                                         \
+        {                                                                                                               \
+            cmd_reg_mem(Cmd)                                                                                            \
+        }                                                                                                               \
+                                                                                                                        \
+        else                                                                                                            \
+        {                                                                                                               \
+            count_of_scan = sscanf(data->start, "%s [%d]", cmd, &memory_arg);                                           \
+                                                                                                                        \
+            if (count_of_scan == 2)                                                                                     \
+            {                                                                                                           \
+                cmd_ram(Cmd)                                                                                            \
+            }                                                                                                           \
+        }                                                                                                               \
+    }                                                                                                                   \
+
 
 
 #define cmd_ram(Cmd)                                                                                                    \
 Flag flag = command_mem(CMD_##Cmd);                                                                                     \
 *(Flag *)(my_assembler.code + (my_assembler.ip) ++) = flag;                                                             \
 push_back_flag_value(int, memory_arg);                                                                                  \
+
+
+#define prepeare_const(Cmd)\
+    cmd_const(Cmd)
 
 
 #define cmd_const(Cmd)                                                                                                  \
@@ -67,6 +117,21 @@ else                                                                            
     *(Flag *)(my_assembler.code + (my_assembler.ip) ++) = flag;                                                         \
     push_back_flag_value(char, -1);                                                                                     \
 }                                                                                                                       \
+
+#define prepeare_label(Cmd)                                                                                             \
+char func_label_arg[MAX_LABEL_ARG];                                                                                     \
+count_of_scan = sscanf(data->start, "%s %s", cmd, func_label_arg);                                                      \
+                                                                                                                        \
+if (count_of_scan != 2)                                                                                                 \
+{                                                                                                                       \
+    my_assembler.state = STOP_UNDECLARED_ASSEMBLER;                                                                     \
+    break;                                                                                                              \
+}                                                                                                                       \
+                                                                                                                        \
+else                                                                                                                    \
+{                                                                                                                       \
+    cmd_label(Cmd)                                                                                                      \
+}
 
 
 #define cmd_label(Cmd)                                                                                                  \
@@ -92,69 +157,6 @@ else                                                                            
         }                                                                                                               \
 }
 
-
-#define prepeare_register(Cmd)                                                                                          \
-char register_arg = 0;                                                                                                  \
-                                                                                                                        \
-count_of_scan = sscanf(data->start, "%s %c%c", cmd, &register_arg, &type);                                              \
-if (register_arg < 'a' || register_arg > 'z' || count_of_scan != 3)                                                     \
-{                                                                                                                       \
-    my_assembler.state = STOP_UNDECLARED_ASSEMBLER;                                                                     \
-    break;                                                                                                              \
-}                                                                                                                       \
-else                                                                                                                    \
-{                                                                                                                       \
-    cmd_reg(Cmd)                                                                                                        \
-}
-
-
-#define prepeare_ram(Cmd)                                                                                               \
-int memory_arg = 0;                                                                                                     \
-char register_arg = 0;                                                                                                  \
-count_of_scan = sscanf(data->start, "%s [%c%c + %d]", cmd, &register_arg, &type, &memory_arg);                          \
-                                                                                                                        \
-if (count_of_scan == 4)                                                                                                 \
-{                                                                                                                       \
-    cmd_reg_mem(Cmd)                                                                                                    \
-}                                                                                                                       \
-                                                                                                                        \
-else                                                                                                                    \
-{                                                                                                                       \
-    count_of_scan = sscanf(data->start, "%s [%d + %c%c]", cmd, &memory_arg, &register_arg, &type);                      \
-    if (count_of_scan == 4)                                                                                             \
-    {                                                                                                                   \
-        cmd_reg_mem(Cmd)                                                                                                \
-                                                                                                                        \
-    }                                                                                                                   \
-                                                                                                                        \
-    else                                                                                                                \
-    {                                                                                                                   \
-        count_of_scan = sscanf(data->start, "%s [%d]", cmd, &memory_arg);                                               \
-                                                                                                                        \
-        if (count_of_scan == 2)                                                                                         \
-        {                                                                                                               \
-            cmd_ram(Cmd)                                                                                                \
-        }                                                                                                               \
-    }                                                                                                                   \
-}                                                                                                                       \
-
-
-#define prepeare_label(Cmd)                                                                                             \
-    char func_label_arg[MAX_LABEL_ARG];                                                                                 \
-    count_of_scan = sscanf(data->start, "%s %s", cmd, func_label_arg);                                                  \
-                                                                                                                        \
-    if (count_of_scan != 2)                                                                                             \
-    {                                                                                                                   \
-        my_assembler.state = STOP_UNDECLARED_ASSEMBLER;                                                                 \
-        break;                                                                                                          \
-    }                                                                                                                   \
-                                                                                                                        \
-    else                                                                                                                \
-    {                                                                                                                   \
-        cmd_label(Cmd)                                                                                                  \
-    }
-
-
 #define DEF_CMD(Cmd, num, args, ...)                                                                                    \
 if (strcmp(cmd, #Cmd) == 0 && num <= SIMPLE_COMMANDS)                                                                   \
     {                                                                                                                   \
@@ -173,7 +175,7 @@ if (strcmp(cmd, #Cmd) == 0 && num <= SIMPLE_COMMANDS)                           
                                                                                                                         \
                 else                                                                                                    \
                 {                                                                                                       \
-                    cmd_const(Cmd)                                                                                      \
+                    prepeare_const(Cmd)                                                                                 \
                 }                                                                                                       \
             }                                                                                                           \
                                                                                                                         \
