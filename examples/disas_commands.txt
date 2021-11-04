@@ -1,0 +1,24 @@
+in px
+in ax
+push 1
+push ax
+push 1
+jb 1:
+hlt
+1:
+call2:
+pop
+pop
+out
+hlt
+2:
+pop
+mul
+push ax
+push 1
+sub
+pop ax
+push ax
+push 1
+jb 1:
+ret

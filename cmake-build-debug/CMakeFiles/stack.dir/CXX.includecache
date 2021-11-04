@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/levce/CLionProjects/ded/commands.h
+stdio.h
+-
+
+C:/Users/levce/CLionProjects/ded/main.cpp
+processor.h
+C:/Users/levce/CLionProjects/ded/processor.h
+
+C:/Users/levce/CLionProjects/ded/processor.h
+stdio.h
+-
+assert.h
+-
+string.h
+-
+ctype.h
+-
+math.h
+-
+commands.h
+C:/Users/levce/CLionProjects/ded/commands.h
+stack.h
+C:/Users/levce/CLionProjects/ded/stack.h
+
+C:/Users/levce/CLionProjects/ded/stack.h
+stdio.h
+-
+assert.h
+-
+math.h
+-
+string.h
+-
+stdint.h
+-
+

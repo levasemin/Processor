@@ -1,0 +1,77 @@
+in ax
+in bx
+in rx
+push -1
+pop xx
+push 0
+pop xy
+
+call func:
+out
+hlt
+
+func:
+call rise_x:
+push xx
+push xx
+mul
+push yx
+push yx
+mul
+push rx
+push rx
+mul
+ret
+
+jae in_circle:
+jb out_circle:
+
+in_circle:
+push 1
+push yx
+push ax
+mul
+push xx
+add
+push ox
+push 1
+push [ox + 2048]
+call func:
+
+
+out_circle:
+push 0
+push [ox + 2048]
+call func:
+
+rise_x:
+push xx
+push ax
+ja x_in_field:
+jbe x_not_in_field:
+ret
+
+x_in_field:
+push 1
+add
+pop xx
+ret
+
+x_not_in_field:
+push ax
+pop xx
+push yx
+push bx
+ja y_in_field:
+jbe y_not_in_field:
+
+y_in_field:
+push yx
+push 1
+add
+pop yx
+ret
+
+y_not_in_field:
+drw ax bx
+hlt

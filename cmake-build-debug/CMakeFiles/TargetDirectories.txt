@@ -1,0 +1,3 @@
+C:/Users/levce/CLionProjects/ded/cmake-build-debug/CMakeFiles/ded.dir
+C:/Users/levce/CLionProjects/ded/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/levce/CLionProjects/ded/cmake-build-debug/CMakeFiles/rebuild_cache.dir

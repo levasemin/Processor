@@ -1,0 +1,24 @@
+in px
+in ax
+push 1
+push ax
+push 1
+jb func:
+hlt
+func:
+call calc:
+pop
+pop
+out
+hlt
+calc:
+pop
+mul
+push ax
+push 1
+sub
+pop ax
+push ax
+push 1
+jb func:
+ret
