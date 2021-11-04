@@ -6,4 +6,4 @@ set(CMAKE_CXX_FLAGS  "-g -std=c++14 -Wall -Wextra -Weffc++ -Wc++0x-compat -Wc++1
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ded main.cpp prepear_text.cpp proccessor.cpp assembler.cpp disassembler.cpp log_file.cpp stack.cpp)
+add_executable(ded main.cpp prepear_text.cpp proccessor.cpp assembler.cpp disassembler.cpp functions.cpp log_file.cpp stack.cpp)

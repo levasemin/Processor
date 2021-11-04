@@ -176,6 +176,30 @@ disassembler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ded.dir\build.make CMakeFiles/ded.dir/disassembler.cpp.s
 .PHONY : disassembler.cpp.s
 
+functions.obj: functions.cpp.obj
+.PHONY : functions.obj
+
+# target to build an object file
+functions.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ded.dir\build.make CMakeFiles/ded.dir/functions.cpp.obj
+.PHONY : functions.cpp.obj
+
+functions.i: functions.cpp.i
+.PHONY : functions.i
+
+# target to preprocess a source file
+functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ded.dir\build.make CMakeFiles/ded.dir/functions.cpp.i
+.PHONY : functions.cpp.i
+
+functions.s: functions.cpp.s
+.PHONY : functions.s
+
+# target to generate assembly for a file
+functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ded.dir\build.make CMakeFiles/ded.dir/functions.cpp.s
+.PHONY : functions.cpp.s
+
 log_file.obj: log_file.cpp.obj
 .PHONY : log_file.obj
 
@@ -311,6 +335,9 @@ help:
 	@echo ... disassembler.obj
 	@echo ... disassembler.i
 	@echo ... disassembler.s
+	@echo ... functions.obj
+	@echo ... functions.i
+	@echo ... functions.s
 	@echo ... log_file.obj
 	@echo ... log_file.i
 	@echo ... log_file.s

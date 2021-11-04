@@ -13,6 +13,11 @@ CMakeFiles/ded.dir/disassembler.cpp.obj: \
  ../disassembler.cpp \
  ../processor.h \
  ../stack.h
+CMakeFiles/ded.dir/functions.cpp.obj: \
+ ../commands.h \
+ ../functions.cpp \
+ ../processor.h \
+ ../stack.h
 CMakeFiles/ded.dir/log_file.cpp.obj: \
  ../commands.h \
  ../log_file.cpp \

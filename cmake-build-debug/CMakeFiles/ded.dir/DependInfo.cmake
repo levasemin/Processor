@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/levce/CLionProjects/ded/assembler.cpp" "C:/Users/levce/CLionProjects/ded/cmake-build-debug/CMakeFiles/ded.dir/assembler.cpp.obj"
   "C:/Users/levce/CLionProjects/ded/disassembler.cpp" "C:/Users/levce/CLionProjects/ded/cmake-build-debug/CMakeFiles/ded.dir/disassembler.cpp.obj"
+  "C:/Users/levce/CLionProjects/ded/functions.cpp" "C:/Users/levce/CLionProjects/ded/cmake-build-debug/CMakeFiles/ded.dir/functions.cpp.obj"
   "C:/Users/levce/CLionProjects/ded/log_file.cpp" "C:/Users/levce/CLionProjects/ded/cmake-build-debug/CMakeFiles/ded.dir/log_file.cpp.obj"
   "C:/Users/levce/CLionProjects/ded/main.cpp" "C:/Users/levce/CLionProjects/ded/cmake-build-debug/CMakeFiles/ded.dir/main.cpp.obj"
   "C:/Users/levce/CLionProjects/ded/prepear_text.cpp" "C:/Users/levce/CLionProjects/ded/cmake-build-debug/CMakeFiles/ded.dir/prepear_text.cpp.obj"

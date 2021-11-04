@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ded.dir/assembler.cpp.obj"
   "CMakeFiles/ded.dir/disassembler.cpp.obj"
+  "CMakeFiles/ded.dir/functions.cpp.obj"
   "CMakeFiles/ded.dir/log_file.cpp.obj"
   "CMakeFiles/ded.dir/main.cpp.obj"
   "CMakeFiles/ded.dir/prepear_text.cpp.obj"
