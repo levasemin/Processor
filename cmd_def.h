@@ -794,3 +794,27 @@ DEF_CMD(NOP, CMD_NOP, 0,
 },
 {
 })
+
+DEF_CMD(DB, CMD_DB, 1,
+{
+    ++my_cpu.ip;
+
+    struct str
+    {
+        char text [MAX_SIZE_LINE];
+    };
+
+    printf("%s\n", (*(str *)(my_cpu.code + my_cpu.ip)).text);
+    my_cpu.ip += MAX_SIZE_LINE;
+},
+{
+    ++my_disassembler.ip;
+
+    struct str
+    {
+        char text [MAX_SIZE_LINE];
+    };
+
+    fprintf(dis_file, "db %s", (*(str *)(my_disassembler.code+ my_disassembler.ip)).text);
+    my_disassembler.ip += MAX_SIZE_LINE;
+})

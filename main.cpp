@@ -1,6 +1,6 @@
 #include "processor.h"
 
-const char* input_file_name  = "C:\\Users\\levce\\CLionProjects\\ded\\examples\\rec.txt";
+const char* input_file_name  = "C:\\Users\\levce\\CLionProjects\\ded\\examples\\square.txt";
 const char* output_file_name = "C:\\Users\\levce\\CLionProjects\\ded\\examples\\out_commands.txt";
 const char* log_file_name    = "C:\\Users\\levce\\CLionProjects\\ded\\log\\log.txt";
 const char* dis_file_name    = "C:\\Users\\levce\\CLionProjects\\ded\\examples\\disas_commands.txt";

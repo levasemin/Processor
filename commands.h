@@ -29,6 +29,7 @@ enum Command
     CMD_IN,
     CMD_RET,
     CMD_LOG,
+    CMD_DB,
 
     SIMPLE_COMMANDS,
 
