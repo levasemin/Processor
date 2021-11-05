@@ -128,16 +128,16 @@ void prepeare_const(assembler *my_assembler, strings *data, char *cmd, Flag flag
 
     if ((strcmp(cmd, "DB")) == 0)
     {
-        flag = command_string(flag.OPERATION);                                                                                  \
+        flag = command_string(flag.OPERATION);                                                                  \
 
         struct str
         {
             char text [MAX_SIZE_LINE];
         };
 
-        str text = {};                                                                                                \
+        str text = {};                                                                                                  \
 
-        sscanf(data->start, "%s %s", cmd, text.text);                                                                \
+        sscanf(data->start, "%s %s", cmd, text.text);                                                            \
 
         *(Flag *)(my_assembler->code + (my_assembler->ip) ++) = flag;
         printf("%Iu\n", my_assembler->ip);
@@ -235,7 +235,7 @@ if (strcmp(cmd, #Cmd) == 0 && num <= SIMPLE_COMMANDS)                           
                     prepeare_ram(&my_assembler, data, cmd, flag);                                                       \
                 }                                                                                                       \
                                                                                                                         \
-                else                                                                            \
+                else                                                                                                    \
                 {                                                                                                       \
                     Flag flag = command_const(CMD_##Cmd);                                                               \
                                                                                                                         \
