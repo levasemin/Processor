@@ -18,7 +18,6 @@ ja no_roots:
 pop
 
 sqrt
-#дискриминант посчитан
 pop dx
 push dx
 push 0

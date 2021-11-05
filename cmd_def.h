@@ -1,8 +1,8 @@
 #ifdef PROCESSOR
-#define CUR_FLAG        *(Flag*)(my_cpu.code + my_cpu.ip)
+#define CUR_FLAG        *(Flag*)(void *)(my_cpu.code + my_cpu.ip)
 #define CUR_BYTE        *(my_cpu.code + my_cpu.ip)
 
-#define CUR_INT         *(int *)(my_cpu.code + my_cpu.ip)
+#define CUR_INT         *(int *)(void *)(my_cpu.code + my_cpu.ip)
 #define CUR_INT_NEXT    CUR_INT;                                                                                        \
                         my_cpu.ip += sizeof(int);
 
@@ -13,9 +13,9 @@
 #endif
 
 #ifdef DISASSEMBLER
-#define CUR_FLAG        *(Flag*)(my_disassembler.code + my_disassembler.ip)
+#define CUR_FLAG        *(Flag*)(void *)(my_disassembler.code + my_disassembler.ip)
 #define CUR_BYTE        *(my_disassembler.code + my_disassembler.ip)
-#define CUR_INT         *(int *)(my_disassembler.code + my_disassembler.ip)
+#define CUR_INT         *(int *)(void *)(my_disassembler.code + my_disassembler.ip)
 
 #define CUR_INT_NEXT    CUR_INT; \
                         my_disassembler.ip += sizeof(int);
@@ -214,7 +214,9 @@ DEF_CMD(PUSH, CMD_PUSH, 1,
 DEF_CMD(IN, CMD_IN, 1,
 {
     cpu_type el = 0;
+
     scanf("%d", &el);
+    
     el *= my_cpu.registers[REG_PRESISION];
 
     if ((CUR_FLAG).CONST_FLAG == 0 && (CUR_FLAG).REG_FLAG == 0 && (CUR_FLAG).MEM_FLAG == 0)
@@ -382,7 +384,7 @@ DEF_CMD(DIV, CMD_DIV, 0,
 
 DEF_CMD(SQRT, CMD_SQRT, 0,
 {
-    cpu_type a = (int)sqrt(pop_stack(&my_cpu.stack)) * 10;
+    cpu_type a = (int)sqrt(pop_stack(&my_cpu.stack) * my_cpu.registers[REG_PRESISION]);
 
     push_stack(&my_cpu.stack, &a);
 
@@ -399,7 +401,7 @@ DEF_CMD(SQRT, CMD_SQRT, 0,
 
 DEF_CMD(RET, CMD_RET, 0,
 {
-     my_cpu.ip = pop_stack(&my_cpu.back_call);
+     my_cpu.ip = (size_t)pop_stack(&my_cpu.back_call);
 },
 {
     if (j == 1)
@@ -412,7 +414,7 @@ DEF_CMD(RET, CMD_RET, 0,
 
 
 DEF_CMD(OUT, CMD_OUT, 1,
-        {
+{
     if ((CUR_FLAG).CONST_FLAG == 0 && (CUR_FLAG).REG_FLAG == 0 && (CUR_FLAG).MEM_FLAG == 0)
     {
         cpu_type el = top_stack(&my_cpu.stack);
@@ -535,7 +537,7 @@ DEF_CMD(LOG, CMD_LOG, 0,
 DEF_CMD(JMP, CMD_JMP, 1,
 {
     ++my_cpu.ip;
-    my_cpu.ip = CUR_INT;
+    my_cpu.ip = (size_t)CUR_INT;
 },
 {
     ++my_disassembler.ip;
@@ -595,7 +597,7 @@ DEF_CMD(JAE, CMD_JAE, 1,
 
     if (el1 >= el2)
     {
-        my_cpu.ip = (size_t)*(cpu_type *)(my_cpu.code + my_cpu.ip);
+        my_cpu.ip = (size_t)*(cpu_type *)(void *)(my_cpu.code + my_cpu.ip);
     }
 
     else
@@ -628,7 +630,7 @@ DEF_CMD(JB, CMD_JB, 1,
 
     if (el1 < el2)
     {
-        my_cpu.ip = (size_t)*(cpu_type *)(my_cpu.code +  my_cpu.ip);
+        my_cpu.ip = (size_t)*(cpu_type *)(void *)(my_cpu.code +  my_cpu.ip);
     }
 
     else
@@ -727,7 +729,7 @@ DEF_CMD(JNE, CMD_JNE, 1,
 
     if (el1 != el2)
     {
-        my_cpu.ip = (size_t)*(cpu_type *)(my_cpu.code + my_cpu.ip);
+        my_cpu.ip = (size_t)*(cpu_type *)(void *)(my_cpu.code + my_cpu.ip);
     }
 
     else
@@ -761,7 +763,7 @@ DEF_CMD(CALL, CMD_CALL, 1,
     cpu_type el = (cpu_type)my_cpu.ip;
     push_stack(&my_cpu.back_call, &(el));
 
-    my_cpu.ip = (size_t)*(cpu_type *)(my_cpu.code + ip_jmp);
+    my_cpu.ip = (size_t)*(cpu_type *)(void *)(my_cpu.code + ip_jmp);
 },
 {
     ++my_disassembler.ip;

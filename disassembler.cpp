@@ -7,6 +7,12 @@
     code_dis                                         \
     break;
 
+#define DUMP_CONSOLE(operation)                       \
+    getchar();                                        \
+    fprintf(stderr, "%d \n", operation);              \
+    dump_log_file(&my_disassembler, stderr);
+
+
 void fprintf_func_label_name(FILE*file, char operation[5], assembler *my_disassembler, size_t necessary_ip);
 
 void generate_push_label(assembler *my_disassembler);
@@ -43,7 +49,16 @@ void fprintf_func_label_name(FILE*file, char operation[5], assembler *my_disasse
     }
 }
 
-void disassemble(const char *output_file_name, const char *dis_file_name, const char *log_file_name)
+void Initialize_disassembler(assembler *my_disassembler, int state, FILE *output)
+{
+    size_t count_elements = read_file(output, &my_disassembler->code);
+
+    my_disassembler->state = state;
+    my_disassembler->code = my_disassembler->code;
+    my_disassembler->code_capacity = count_elements;
+}
+
+void disassemble(const char *output_file_name, const char *dis_file_name)
 {
     assert(output_file_name != nullptr);
     assert(dis_file_name    != nullptr);
@@ -57,35 +72,10 @@ void disassemble(const char *output_file_name, const char *dis_file_name, const 
     assert(log_file != nullptr);
     assert(dis_file != nullptr);
 
-    disassemble(output, log_file, dis_file);
+    disassemble(output, dis_file, log_file);
 }
 
-int check_verification(int *state, Verification ver_target, Verification ver)
-{
-    if (strcmp(ver.signature, ver_target.signature))
-    {
-        *state = STOP_INVALID_SIGNATURE;
-        return 1;
-    }
-
-    if (strcmp(ver.version, ver_target.version))
-    {
-        *state = STOP_INVALID_VERSION;
-        return 1;
-    }
-    return 0;
-}
-
-void Initialize_disassembler(assembler *my_disassembler, int state, FILE *output)
-{
-    size_t count_elements = read_file(output, &my_disassembler->code);
-
-    my_disassembler->state = state;
-    my_disassembler->code = my_disassembler->code;
-    my_disassembler->code_capacity = count_elements;
-}
-
-void disassemble(FILE *output, FILE *log_file, FILE *dis_file)
+void disassemble(FILE *output, FILE *dis_file, FILE *log_file)
 {
     assert(output != nullptr);
     assert(log_file != nullptr);
@@ -110,6 +100,8 @@ void disassemble(FILE *output, FILE *log_file, FILE *dis_file)
 
         while (my_disassembler.ip < my_disassembler.code_capacity)
         {
+            DUMP_CONSOLE(((Flag *)(my_disassembler.code + my_disassembler.ip))->OPERATION)
+            
             if (my_disassembler.all_labels.count > 0 && j == 1)
             {
                 char operation[5] = "";
@@ -132,8 +124,30 @@ void disassemble(FILE *output, FILE *log_file, FILE *dis_file)
             }
         }
     }
+}
 
-    dump_log_file(&my_disassembler, log_file);
+
+static const char* default_dis_file_name    = "examples/disas_commands.txt";
+
+static const char* default_output_file_name = "examples/out_commands.txt";
+
+int main(int argc, char *argv[]) {
+    
+    const char *dis_file_name = default_dis_file_name;
+
+    const char *output_file_name = default_output_file_name;
+
+    if (argc >= 2)
+    {
+        dis_file_name = argv[1];
+    }
+
+    if (argc >= 3)
+    {
+        output_file_name = argv[2];
+    }
+
+    disassemble(output_file_name, dis_file_name);
 }
 
 #undef DEF_CMD

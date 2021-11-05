@@ -24,11 +24,13 @@ C:/Users/levce/CLionProjects/ded/processor.h
 cmd_def.h
 C:/Users/levce/CLionProjects/ded/cmd_def.h
 
-C:/Users/levce/CLionProjects/ded/proccessor.cpp
+C:/Users/levce/CLionProjects/ded/functions.cpp
 processor.h
 C:/Users/levce/CLionProjects/ded/processor.h
-cmd_def.h
-C:/Users/levce/CLionProjects/ded/cmd_def.h
+
+C:/Users/levce/CLionProjects/ded/log_file.cpp
+processor.h
+C:/Users/levce/CLionProjects/ded/processor.h
 
 C:/Users/levce/CLionProjects/ded/processor.h
 stdio.h

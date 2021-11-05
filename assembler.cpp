@@ -7,6 +7,12 @@
 #define command_none(operation) {0, 0, 0, operation}
 #define command_string(operation) {1, 1, 1, operation}
 
+#define DUMP_CONSOLE(cmd)                             \
+    getchar();                                        \
+    fprintf(stderr, "line: %Iu \n", i + 1);           \
+    fprintf(stderr, "%s \n", cmd);                    \
+    dump_log_file(&my_assembler, stderr);
+
 #define push_back_flag_value(type, value)                                                                               \
     if (my_assembler->code_capacity <= my_assembler->ip + sizeof(Flag) + sizeof(value))                                 \
     {                                                                                                                   \
@@ -26,7 +32,7 @@
                                                                                                                         \
     if (flag.CONST_FLAG != 0 || flag.REG_FLAG != 0 || flag.MEM_FLAG != 0)                                               \
     {                                                                                                                   \
-        *(type *)(my_assembler->code + my_assembler->ip) = value;                                                       \
+        *(type *)(void *)(my_assembler->code + my_assembler->ip) = value;                                               \
         my_assembler->ip += sizeof(value);                                                                              \
     }                                                                                                                   \
 
@@ -49,7 +55,6 @@ void prepeare_register(assembler *my_assembler, strings *data, char *cmd, Flag f
 {
     char register_arg = 0;
     char type = 0;
-
     int count_of_scan = sscanf(data->start, "%s %c%c", cmd, &register_arg, &type);
 
     *(Flag *)(my_assembler->code + (my_assembler->ip) ++) = flag;
@@ -72,7 +77,6 @@ void prepeare_ram(assembler *my_assembler, strings *data, char *cmd, Flag flag)
     int memory_arg = 0;
     char register_arg = 0;
     char type = 0;
-
     int count_of_scan = sscanf(data->start, "%s [%c%c + %d]", cmd, &register_arg, &type, &memory_arg);
 
     if (count_of_scan == 4)
@@ -130,22 +134,20 @@ void prepeare_const(assembler *my_assembler, strings *data, char *cmd, Flag flag
 
     if ((strcmp(cmd, "DB")) == 0)
     {
-        flag = command_string(flag.OPERATION);
+        flag = command_string(flag.OPERATION);                                                                  
 
         struct str
         {
             char text [MAX_SIZE_LINE];
         };
 
-        str text = {};
+        str text = {};                                                                                                  
 
-        sscanf(data->start, "%s %s", cmd, text.text);
+        sscanf(data->start, "%s %s", cmd, text.text);                                                            
 
-        *(Flag *)(my_assembler->code + (my_assembler->ip) ++) = flag;
-        printf("%Iu\n", my_assembler->ip);
-
+        *(Flag *)(my_assembler->code + (my_assembler->ip) ++) = flag;        
+        
         push_back_flag_value(str, text);
-        printf("!%Iu!\n", my_assembler->ip);
     }
 
     else
@@ -223,14 +225,13 @@ if (strcmp(cmd, #Cmd) == 0 && num <= SIMPLE_COMMANDS)                           
         {                                                                                                               \
             if (args > 0)                                                                                               \
             {                                                                                                           \
-                if (*(data->end - 1) == 'x')                                                                            \
+                if (*(data->end - 2) == 'x')                                                                            \
                 {                                                                                                       \
                     Flag flag = command_reg(CMD_##Cmd);                                                                 \
-                                                                                                                        \
                     prepeare_register(&my_assembler, data, cmd, flag);                                                  \
                 }                                                                                                       \
                                                                                                                         \
-                else if (*(data->end - 1) == ']')                                                                       \
+                else if (*(data->end - 2) == ']')                                                                       \
                 {                                                                                                       \
                     Flag flag = command_mem(CMD_##Cmd);                                                                 \
                                                                                                                         \
@@ -318,9 +319,9 @@ void Initialize_assembler(assembler *my_assembler, int state, Verification ver, 
 
 int read_command(strings *data, char *cmd)
 {
-    if (data->start == data->end || *data->start == '#')
+    if (*data->start == '#')
     {
-        return 0;
+        return -1;
     }
     int arg = 0;
     int count_of_scan = sscanf(data->start, "%s %d", cmd, &arg);
@@ -339,7 +340,6 @@ int read_command(strings *data, char *cmd)
 void add_label(assembler *my_assembler, strings *data, char *label_arg)
 {
     sscanf(data->start, "%s", label_arg);
-
     bool label_was = false;
 
     for (size_t k = 0; k < my_assembler->all_labels.count; ++k)
@@ -359,14 +359,13 @@ void add_label(assembler *my_assembler, strings *data, char *label_arg)
     }
 }
 
-void assemble(const char *input_file_name, const char *output_file_name, const char *log_file_name)
+void assemble(const char *input_file_name, const char *output_file_name)
 {
     assert(input_file_name  != nullptr);
     assert(output_file_name != nullptr);
-    assert(log_file_name    != nullptr);
 
-    FILE *input = fopen(input_file_name, "r");
-    FILE *output = fopen(output_file_name, "wb");
+    FILE *input    = fopen(input_file_name, "r");
+    FILE *output   = fopen(output_file_name, "wb");
     FILE *log_file = fopen(log_file_name, "a");
 
     assert(input    != nullptr);
@@ -400,14 +399,19 @@ void assemble(FILE *input, FILE *output, FILE *log_file)
         my_assembler.ip = sizeof(Verification);
         for (size_t i = 0; i < count_strings; ++i)
         {
+            
             char cmd[MAX_SIZE_LINE] = "";
 
             int count_of_scan = read_command(data, cmd);
-            if ( count_of_scan == 0)
+            
+            //DUMP_CONSOLE(cmd);
+            
+            if ( count_of_scan == -1)
             {
                 data += 1;
                 continue;
             }
+
             #include "cmd_def.h"
             {
                 if (strchr(data->start, ':'))
@@ -423,7 +427,7 @@ void assemble(FILE *input, FILE *output, FILE *log_file)
 
             if (my_assembler.state != RUNNING_ASSEMBLER)
             {
-                fprintf(log_file, "line: %Iu \n", i + 1);
+                fprintf(log_file, "line: %Ilu \n", i + 1);
                 dump_log_file(&my_assembler, log_file);
 
                 assert(0);
@@ -436,8 +440,32 @@ void assemble(FILE *input, FILE *output, FILE *log_file)
     }
 
     fwrite(my_assembler.code, sizeof(char), my_assembler.ip, output);
+    
+    fclose(input);
+    fclose(output);
+}
 
-    dump_log_file(&my_assembler, log_file);
+static const char* default_input_file_name    = "examples/square.txt";
+
+static const char* default_output_file_name   = "examples/out_commands.txt";
+
+int main(int argc, char *argv[]) {
+    
+    const char *input_file_name = default_input_file_name;
+
+    const char *output_file_name = default_output_file_name;
+
+    if (argc >= 2)
+    {
+        input_file_name = argv[1];
+    }
+
+    if (argc >= 3)
+    {
+        output_file_name = argv[2];
+    }
+
+    assemble(input_file_name, output_file_name);
 }
 
 #undef DEF_CMD

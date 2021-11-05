@@ -9,7 +9,7 @@ void dump_log_file(cpu *my_cpu, FILE *file)
     fprintf(file, "state: %s \n", cpu_states_name[my_cpu->state]);
     fprintf(file, "expected signature: %s real signature %s \n", SIGNATURE, ver.signature);
     fprintf(file, "expected version: %s real version %s \n", VERSION, ver.version);
-    fprintf(file, "ip: %Iu \n", my_cpu->ip);
+    fprintf(file, "ip: %Ilu \n", my_cpu->ip);
 
     for (size_t i = 0; i < my_cpu->code_capacity; i++)
     {
@@ -29,9 +29,9 @@ void dump_log_file(cpu *my_cpu, FILE *file)
 
     fprintf(file, "stack:\n");
 
-    for (size_t i = 0; i < my_cpu->stack.size; i++)
+    for (size_t i = 0; i < my_cpu->stack.size; ++i)
     {
-        fprintf(file, "[%Iu] %d\n", my_cpu->stack.size, pop_stack(&my_cpu->stack));
+        fprintf(file, "[%Ilu] %d\n", my_cpu->stack.size, ((int *)(my_cpu->stack.data + sizeof(my_cpu->stack.stack_canary)))[my_cpu->stack.size - i - 1]);
     }
 
     fprintf(file, "\n\n");
@@ -66,7 +66,7 @@ void dump_log_file(assembler *my_assembler, FILE *file)
     fprintf(file, "state: %s \n", cpu_states_name[my_assembler->state]);
     fprintf(file, "expected signature: %s real signature %s \n", SIGNATURE, ver.signature);
     fprintf(file, "expected version: %s real version %s \n", VERSION, ver.version);
-    fprintf(file, "ip: %Iu \n", my_assembler->ip);
+    fprintf(file, "ip: %Ilu \n", my_assembler->ip);
 
     for (size_t i = 0; i < my_assembler->code_capacity; i++)
     {

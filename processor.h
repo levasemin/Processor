@@ -19,6 +19,11 @@ const int DEFAULT_CAPACITY_LABELS = 10;
 const int REGISTER_COUNT = 26;
 const int RAM_SIZE  = 1024;
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-variable"
+static const char* log_file_name = "log/log.txt";
+#pragma GCC diagnostic pop
+
 enum cpu_states
 {
     RUNNING_ASSEMBLER            = 0,
@@ -53,7 +58,7 @@ struct strings
     char *end;
 };
 
-struct ram
+struct Ram
 {
     size_t count;
     int memmory[RAM_SIZE];
@@ -92,7 +97,7 @@ struct cpu
     char *code;
 
     Stack stack;
-    ram ram;
+    Ram ram;
     cpu_type registers[REGISTER_COUNT];
 
     Stack back_call;
@@ -100,19 +105,19 @@ struct cpu
     int state;
 };
 
-void assemble(const char *input_file_name, const char *output_file_name, const char *log_file_name);
+void assemble(const char *input_file_name, const char *output_file_name);
 
 void assemble(FILE *input, FILE *output, FILE*log_file);
 
 
-void processor(const char *output_file_name, const char *log_file_name);
+void processor(const char *output_file_name);
 
 void processor(FILE *output, FILE *log_file);
 
 
-void disassemble(const char *output_file_name, const char *dis_file_name, const char *log_file_name);
+void disassemble(const char *output_file_name, const char *dis_file_name);
 
-void disassemble(FILE *output, FILE *log_file, FILE *disas_file);
+void disassemble(FILE *output, FILE *disas_file, FILE *log_file);
 
 
 void Initialize_assembler(assembler *my_assembler, int state, Verification ver, size_t default_capacity_code, size_t default_capacity_labels);

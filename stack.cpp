@@ -131,7 +131,7 @@ size_t increase_stack(Stack *stack)
     #ifdef STACK_DEBUG
     stack->stack_canary = *(unsigned long long *)pointer;
 
-    *(unsigned long long *)(stack->data + sizeof(stack->stack_canary) + new_capacity * sizeof(stack_type)) = (unsigned long long)(stack->stack_canary);
+    *(unsigned long long *)(stack->data + sizeof(stack->stack_canary) + new_capacity * sizeof(stack_type)) = stack->stack_canary;
     #endif
 
     fill_stack(stack);
@@ -243,7 +243,8 @@ void stack_destructor(Stack *stack)
 #ifdef STACK_DEBUG
 void dump(Stack *stack, const char* error_file_name, const char* error_func_name, int line_num)
 {
-    FILE *file = fopen(DUMP_FILE_NAME, "a");
+    FILE *file = stderr;//fopen(DUMP_FILE_NAME, "a");
+    fprintf(file, "beging dumping stack \n");
     unsigned long long state = 0;
 
     if (stack != nullptr)
@@ -256,7 +257,7 @@ void dump(Stack *stack, const char* error_file_name, const char* error_func_name
     }
 
     int index = 1;
-    for (size_t i = 4; i < 1 << COUNT_TYPES_STATES; i <<= 1)
+    for (size_t i = 4; i < (1 << COUNT_TYPES_STATES); i <<= 1)
     {
         if ((state & i) != 0)
         {
@@ -269,35 +270,35 @@ void dump(Stack *stack, const char* error_file_name, const char* error_func_name
     {
         fprintf(file, "Information about stack struct\n\n");
                                                                 // long %X
-        fprintf(file, "excepted first struct canary:  %15IuX;      real first struck canary:  %IuX\n", STRUCT_CANARY, stack->first_struct_canary);
-        fprintf(file, "excepted second struct canary: %15IuX;      real second struck canary: %IuX\n", STRUCT_CANARY, stack->second_struct_canary);
-        fprintf(file, "excepted struct hash:          %15IuX;       real struct hash:         %Iu\n\n\n", stack->struct_hash, calculate_struct_hash(stack));
+        fprintf(file, "excepted first struct canary:  %15lX;      real first struck canary:  %15llX\n", STRUCT_CANARY, stack->first_struct_canary);
+        fprintf(file, "excepted second struct canary: %15lX;      real second struck canary: %15llX\n", STRUCT_CANARY, stack->second_struct_canary);
+        fprintf(file, "excepted struct hash:          %15lX;       real struct hash:         %15lX\n\n\n", stack->struct_hash, calculate_struct_hash(stack));
 
         fprintf(file, "Information about stack\n\n");
 
-        fprintf(file, "excepted first stack canary:   %Iu;           real first stack canary:  %Iu\n", stack->stack_canary, *(unsigned long long *)stack->data);
-        fprintf(file, "excepted second stack canary:  %Iu;           real second stack canary: %Iu\n", stack->stack_canary,
+        fprintf(file, "excepted first stack canary:   %Illu;           real first stack canary:  %Illu\n", stack->stack_canary, *(unsigned long long *)stack->data);
+        fprintf(file, "excepted second stack canary:  %Illu;           real second stack canary: %Illu\n", stack->stack_canary,
                 *(unsigned long long *)(stack->data + stack_canary_size + sizeof(stack_type) * stack->capacity));
-        fprintf(file, "excepted stack hash          %Iu;           real stack hash:        %Iu\n", stack->stack_hash, calculate_stack_hash(stack));
+        fprintf(file, "excepted stack hash          %Ilu;           real stack hash:        %Ilu\n", stack->stack_hash, calculate_stack_hash(stack));
 
-        fprintf(file, "stack size:    %Iu\n", stack->size);
-        fprintf(file, "capacity size: %Iu\n", stack->capacity);
-        fprintf(file, "stack states   %Iu\n", stack->states);
+        fprintf(file, "stack size:    %Ilu\n", stack->size);
+        fprintf(file, "capacity size: %Ilu\n", stack->capacity);
+        fprintf(file, "stack states   %Illu\n", stack->states);
         fprintf(file, "Stack elements:\n");
 
         for (size_t i = 0; i < stack->size; ++i)
         {
-            fprintf(file, "%Iu element: %d\n", i, *(stack_type *)(stack->data + stack_canary_size + i * sizeof(stack_type)));
+            fprintf(file, "%Ilu element: %d\n", i, *(stack_type *)(stack->data + stack_canary_size + i * sizeof(stack_type)));
         }
 
         for (size_t i = stack->size; i < stack->capacity; ++i)
         {
-            fprintf(file, "[%Iu] element: %d\n", i, *(stack_type *)(stack->data + stack_canary_size + i * sizeof(stack_type)));
+            fprintf(file, "[%Ilu] element: %d\n", i, *(stack_type *)(stack->data + stack_canary_size + i * sizeof(stack_type)));
         }
         fprintf(file, "-------------------------------------------------------------------------------\n\n\n\n");
     }
 
-    fclose(file);
+    //fclose(file);
     assert(0);
 }
 
@@ -373,7 +374,7 @@ size_t calculate_hash(const char *data, size_t size)
     size_t hash = 0;
     for (size_t i = 0; i < size; ++i)
     {
-        hash += (size_t)(data[i]) * (1 << i);
+        hash += (size_t)(data[i]) * (1uL << i);
     }
 
     return hash;

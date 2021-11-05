@@ -22,3 +22,19 @@ void push_back_label(labels *all_labels, label lab)
 
     ++all_labels->count;
 }
+
+int check_verification(int *state, Verification ver_target, Verification ver)
+{
+    if (strcmp(ver.signature, ver_target.signature))
+    {
+        *state = STOP_INVALID_SIGNATURE;
+        return 1;
+    }
+
+    if (strcmp(ver.version, ver_target.version))
+    {
+        *state = STOP_INVALID_VERSION;
+        return 1;
+    }
+    return 0;
+}

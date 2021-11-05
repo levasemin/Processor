@@ -23,22 +23,6 @@ CMakeFiles/ded.dir/log_file.cpp.obj: \
  ../log_file.cpp \
  ../processor.h \
  ../stack.h
-CMakeFiles/ded.dir/main.cpp.obj: \
- ../commands.h \
- ../main.cpp \
- ../processor.h \
- ../stack.h
-CMakeFiles/ded.dir/prepear_text.cpp.obj: \
- ../commands.h \
- ../prepear_text.cpp \
- ../processor.h \
- ../stack.h
-CMakeFiles/ded.dir/proccessor.cpp.obj: \
- ../cmd_def.h \
- ../commands.h \
- ../proccessor.cpp \
- ../processor.h \
- ../stack.h
 CMakeFiles/ded.dir/stack.cpp.obj: \
  ../stack.cpp \
  ../stack.h
