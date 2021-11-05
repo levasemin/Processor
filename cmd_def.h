@@ -3,12 +3,12 @@
 #define CUR_BYTE        *(my_cpu.code + my_cpu.ip)
 
 #define CUR_INT         *(int *)(my_cpu.code + my_cpu.ip)
-#define CUR_INT_NEXT    CUR_INT; \
+#define CUR_INT_NEXT    CUR_INT;                                                                                        \
                         my_cpu.ip += sizeof(int);
 
 #define REG_VALUE       my_cpu.registers[(int)CUR_BYTE]
 
-#define REG_INDEX_NEXT  my_cpu.registers[(int)CUR_BYTE] / my_cpu.registers[REG_PRESISION]; \
+#define REG_INDEX_NEXT  my_cpu.registers[(int)CUR_BYTE] / my_cpu.registers[REG_PRESISION];                              \
                         ++my_cpu.ip;
 #endif
 
@@ -20,6 +20,12 @@
 #define CUR_INT_NEXT    CUR_INT; \
                         my_disassembler.ip += sizeof(int);
 #endif
+
+#define GET_EL1_EL2                                                                                                     \
+cpu_type el1 = pop_stack(&my_cpu.stack);                                                                                \
+cpu_type el2 = pop_stack(&my_cpu.stack);                                                                                \
+push_stack(&my_cpu.stack, &el2);                                                                                        \
+push_stack(&my_cpu.stack, &el1);
 
 #define PRINTF_ELEMENT                                          \
     if (el < 0)                                                 \
@@ -551,12 +557,10 @@ DEF_CMD(JMP, CMD_JMP, 1,
 DEF_CMD(JA, CMD_JA, 1,
 {
     ++my_cpu.ip;
-    cpu_type a = pop_stack(&my_cpu.stack);//define
-    cpu_type b = pop_stack(&my_cpu.stack);
-    push_stack(&my_cpu.stack, &b);
-    push_stack(&my_cpu.stack, &a);
 
-    if (a > b)
+    GET_EL1_EL2
+
+    if (el1 > el2)
     {
         my_cpu.ip = (size_t)CUR_INT;
     }
@@ -586,13 +590,10 @@ DEF_CMD(JA, CMD_JA, 1,
 DEF_CMD(JAE, CMD_JAE, 1,
 {
     ++my_cpu.ip;
-    cpu_type a = pop_stack(&my_cpu.stack);
-    cpu_type b = pop_stack(&my_cpu.stack);
 
-    push_stack(&my_cpu.stack, &b);
-    push_stack(&my_cpu.stack, &a);
+    GET_EL1_EL2
 
-    if (a >= b)
+    if (el1 >= el2)
     {
         my_cpu.ip = (size_t)*(cpu_type *)(my_cpu.code + my_cpu.ip);
     }
@@ -622,12 +623,10 @@ DEF_CMD(JAE, CMD_JAE, 1,
 DEF_CMD(JB, CMD_JB, 1,
 {
     ++my_cpu.ip;
-    cpu_type a = pop_stack(&my_cpu.stack);
-    cpu_type b = pop_stack(&my_cpu.stack);
-    push_stack(&my_cpu.stack, &b);
-    push_stack(&my_cpu.stack, &a);
 
-    if (a < b)
+    GET_EL1_EL2
+
+    if (el1 < el2)
     {
         my_cpu.ip = (size_t)*(cpu_type *)(my_cpu.code +  my_cpu.ip);
     }
@@ -657,13 +656,10 @@ DEF_CMD(JB, CMD_JB, 1,
 DEF_CMD(JBE, CMD_JBE, 1,
 {
     ++my_cpu.ip;
-    cpu_type a = pop_stack(&my_cpu.stack);
-    cpu_type b = pop_stack(&my_cpu.stack);
 
-    push_stack(&my_cpu.stack, &b);
-    push_stack(&my_cpu.stack, &a);
+    GET_EL1_EL2
 
-    if (a <= b)
+    if (el1 <= el2)
     {
         my_cpu.ip = (size_t)*(cpu_type *)(my_cpu.code + my_cpu.ip);
     }
@@ -693,12 +689,10 @@ DEF_CMD(JBE, CMD_JBE, 1,
 DEF_CMD(JE, CMD_JE, 1,
 {
     ++my_cpu.ip;
-    cpu_type a = pop_stack(&my_cpu.stack);
-    cpu_type b = pop_stack(&my_cpu.stack);
-    push_stack(&my_cpu.stack, &b);
-    push_stack(&my_cpu.stack, &a);
 
-    if (a == b)
+    GET_EL1_EL2
+
+    if (el1 == el2)
     {
         my_cpu.ip = (size_t)*(cpu_type *)(my_cpu.code +  my_cpu.ip);
     }
@@ -728,13 +722,10 @@ DEF_CMD(JE, CMD_JE, 1,
 DEF_CMD(JNE, CMD_JNE, 1,
 {
     ++my_cpu.ip;
-    cpu_type a = pop_stack(&my_cpu.stack);
-    cpu_type b = pop_stack(&my_cpu.stack);
 
-    push_stack(&my_cpu.stack, &b);
-    push_stack(&my_cpu.stack, &a);
+    GET_EL1_EL2
 
-    if (a != b)
+    if (el1 != el2)
     {
         my_cpu.ip = (size_t)*(cpu_type *)(my_cpu.code + my_cpu.ip);
     }

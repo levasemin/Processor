@@ -49,6 +49,7 @@ void prepeare_register(assembler *my_assembler, strings *data, char *cmd, Flag f
 {
     char register_arg = 0;
     char type = 0;
+
     int count_of_scan = sscanf(data->start, "%s %c%c", cmd, &register_arg, &type);
 
     *(Flag *)(my_assembler->code + (my_assembler->ip) ++) = flag;
@@ -71,6 +72,7 @@ void prepeare_ram(assembler *my_assembler, strings *data, char *cmd, Flag flag)
     int memory_arg = 0;
     char register_arg = 0;
     char type = 0;
+
     int count_of_scan = sscanf(data->start, "%s [%c%c + %d]", cmd, &register_arg, &type, &memory_arg);
 
     if (count_of_scan == 4)
@@ -128,20 +130,20 @@ void prepeare_const(assembler *my_assembler, strings *data, char *cmd, Flag flag
 
     if ((strcmp(cmd, "DB")) == 0)
     {
-        flag = command_string(flag.OPERATION);                                                                  \
+        flag = command_string(flag.OPERATION);
 
         struct str
         {
             char text [MAX_SIZE_LINE];
         };
 
-        str text = {};                                                                                                  \
+        str text = {};
 
-        sscanf(data->start, "%s %s", cmd, text.text);                                                            \
+        sscanf(data->start, "%s %s", cmd, text.text);
 
         *(Flag *)(my_assembler->code + (my_assembler->ip) ++) = flag;
         printf("%Iu\n", my_assembler->ip);
-        \
+
         push_back_flag_value(str, text);
         printf("!%Iu!\n", my_assembler->ip);
     }
@@ -337,6 +339,7 @@ int read_command(strings *data, char *cmd)
 void add_label(assembler *my_assembler, strings *data, char *label_arg)
 {
     sscanf(data->start, "%s", label_arg);
+
     bool label_was = false;
 
     for (size_t k = 0; k < my_assembler->all_labels.count; ++k)
