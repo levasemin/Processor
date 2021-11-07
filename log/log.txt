@@ -1,9 +1,24 @@
-state: running assembler 
+state: running disassembler 
 expected signature: DED! real signature DED! 
 expected version: 1.02 real version 1.02 
-ip: 66 
-44 45 44 21 00 31 2e 30 32 00 52 0f 52 00 19 01 00 00 00 1a 00 19 01 00 00 00 81 20 00 00 00 08 a9 29 00 00 00 10 10 48 08 10 28 1a 00 19 01 00 00 00 30 12 00 1a 00 19 01 00 00 00 81 20 00 00 00 58 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                      ^
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 52 0f 52 00 52 01 52 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 6f 64 65 64 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 00 81 61 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 62 00 00 00 89 75 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 
+^
+
+stack:
+
+
+stack: 
+
+-------------------------------------------------------------------------------------------
+
+
+state: running disassembler 
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 52 0f 52 00 19 01 00 00 00 1a 00 19 01 00 00 00 89 20 00 00 00 08 b1 29 00 00 00 10 10 48 08 10 28 1a 00 19 01 00 00 00 30 12 00 1a 00 19 01 00 00 00 89 20 00 00 00 58 
+^
 
 stack:
 
@@ -16,894 +31,24 @@ stack:
 state: running assembler 
 expected signature: DED! real signature DED! 
 expected version: 1.02 real version 1.02 
-ip: 31 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 fe ff ff ff 12 00 19 03 00 00 00 12 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                             ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 29 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 10 19 03 00 00 00 12 01 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                       ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 29 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 10 19 03 00 00 00 12 01 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                       ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 29 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 10 19 03 00 00 00 12 01 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                       ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 29 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 10 19 03 00 00 00 12 01 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                       ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 17 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 00 00 00 
-                                                   ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 24 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 fe ff ff ff 12 00 5c 50 72 6f 67 72 61 6d 20 46 69 6c 65 73 5c 47 69 74 5c 63 6d 64 
-                                                                        ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 fe ff ff ff 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 03 00 00 00 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 22 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                  ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 22 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                  ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 22 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                  ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 21 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                               ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 03 00 00 00 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 21 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 10 19 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                               ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 22 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                  ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 22 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                  ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 22 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                  ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 22 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                  ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 22 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                  ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 22 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                  ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 23 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                     ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 24 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 03 00 00 00 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                        ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 149 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 fe ff ff ff 12 00 19 03 00 00 00 12 01 19 02 00 00 00 12 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 19 00 00 00 00 81 56 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 57 00 00 00 89 6a 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 149 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 fe ff ff ff 12 00 19 03 00 00 00 12 01 19 02 00 00 00 12 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 19 00 00 00 00 79 56 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 89 57 00 00 00 81 6a 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 65 78 65 00 50 72 6f 67 72 61 6d 44 61 74 61 3d 43 3a 5c 50 72 6f 67 72 61 6d 44 61 74 61 00 50 72 6f 67 72 61 6d 57 36 34 33 32 3d 43 3a 5c 50 72 6f 67 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 149 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 fe ff ff ff 12 00 19 03 00 00 00 12 01 19 02 00 00 00 12 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 19 00 00 00 00 81 56 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 57 00 00 00 89 6a 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 149 
-44 45 44 21 00 31 2e 30 32 00 19 02 00 00 00 12 0f 19 fe ff ff ff 12 00 19 03 00 00 00 12 01 19 02 00 00 00 12 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 19 00 00 00 00 79 56 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 89 57 00 00 00 81 6a 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 57 53 5c 73 79 73 74 65 6d 33 32 5c 63 6d 64 2e 65 78 65 00 50 72 6f 67 72 61 6d 44 61 74 61 3d 43 3a 5c 50 72 6f 67 72 61 6d 44 61 74 61 00 50 72 6f 67 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 142 
-44 45 44 21 00 31 2e 30 32 00 19 fe ff ff ff 12 00 19 03 00 00 00 12 01 19 02 00 00 00 12 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 19 00 00 00 00 81 4f 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 50 00 00 00 89 63 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 142 
-44 45 44 21 00 31 2e 30 32 00 19 fe ff ff ff 12 00 19 03 00 00 00 12 01 19 02 00 00 00 12 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 19 00 00 00 00 79 4f 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 89 50 00 00 00 81 63 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 20 46 69 6c 65 73 00 43 6f 6d 53 70 65 63 3d 43 3a 5c 57 49 4e 44 4f 57 53 5c 73 79 73 74 65 6d 33 32 5c 63 6d 64 2e 65 78 65 00 50 
-                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 142 
-44 45 44 21 00 31 2e 30 32 00 19 fe ff ff ff 12 00 19 03 00 00 00 12 01 19 02 00 00 00 12 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 19 00 00 00 00 81 4f 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 50 00 00 00 89 63 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 142 
-44 45 44 21 00 31 2e 30 32 00 19 fe ff ff ff 12 00 19 03 00 00 00 12 01 19 02 00 00 00 12 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 19 00 00 00 00 79 4f 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 89 50 00 00 00 81 63 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 20 46 69 6c 65 73 00 43 6f 6d 53 70 65 63 3d 43 3a 5c 57 49 4e 44 4f 57 53 5c 73 79 73 74 65 6d 33 32 5c 63 6d 64 2e 65 78 65 00 50 
-                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 99 
-44 45 44 21 00 31 2e 30 32 00 81 24 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 25 00 00 00 89 38 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                         ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 99 
-44 45 44 21 00 31 2e 30 32 00 79 24 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 89 25 00 00 00 81 38 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                         ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 99 
-44 45 44 21 00 31 2e 30 32 00 81 24 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 25 00 00 00 89 38 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                         ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 99 
-44 45 44 21 00 31 2e 30 32 00 81 24 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 25 00 00 00 89 38 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                         ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 10 
+ip: 0 
 44 45 44 21 00 31 2e 30 32 00 00 00 00 00 00 00 00 00 00 00 
-                              ^
+^
+
+stack:
+
+
+stack: 
+
+-------------------------------------------------------------------------------------------
+
+
+state: running disassembler 
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 50 52 00 52 01 52 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 6f 64 65 64 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 00 81 60 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 61 00 00 00 89 74 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 
+^
 
 stack:
 
@@ -916,9 +61,24 @@ stack:
 state: running assembler 
 expected signature: DED! real signature DED! 
 expected version: 1.02 real version 1.02 
-ip: 15 
-44 45 44 21 00 31 2e 30 32 00 81 00 00 00 00 00 00 00 00 00 
-                                             ^
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 00 00 00 00 00 00 00 00 00 00 
+^
+
+stack:
+
+
+stack: 
+
+-------------------------------------------------------------------------------------------
+
+
+state: running disassembler 
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 50 52 00 52 01 52 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 6f 64 65 64 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 00 81 60 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 61 00 00 00 89 74 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 
+^
 
 stack:
 
@@ -931,9 +91,9 @@ stack:
 state: running assembler 
 expected signature: DED! real signature DED! 
 expected version: 1.02 real version 1.02 
-ip: 16 
-44 45 44 21 00 31 2e 30 32 00 81 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                ^
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 00 00 00 00 00 00 00 00 00 00 
+^
 
 stack:
 
@@ -943,12 +103,12 @@ stack:
 -------------------------------------------------------------------------------------------
 
 
-state: running assembler 
+state: running disassembler 
 expected signature: DED! real signature DED! 
 expected version: 1.02 real version 1.02 
-ip: 17 
-44 45 44 21 00 31 2e 30 32 00 81 00 00 00 00 10 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                   ^
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 50 52 00 52 01 52 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 6f 64 65 64 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 00 81 60 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 61 00 00 00 89 74 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 
+^
 
 stack:
 
@@ -958,129 +118,12 @@ stack:
 -------------------------------------------------------------------------------------------
 
 
-state: running assembler 
+state: running disassembler 
 expected signature: DED! real signature DED! 
 expected version: 1.02 real version 1.02 
-ip: 19 
-44 45 44 21 00 31 2e 30 32 00 81 00 00 00 00 10 40 12 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                         ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 21 
-44 45 44 21 00 31 2e 30 32 00 81 00 00 00 00 10 40 12 03 1a 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                               ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 26 
-44 45 44 21 00 31 2e 30 32 00 81 00 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                              ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 31 
-44 45 44 21 00 31 2e 30 32 00 81 00 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                             ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 36 
-44 45 44 21 00 31 2e 30 32 00 81 00 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 00 00 00 00 89 00 00 00 00 00 00 00 00 00 00 
-                                                                                                            ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 36 
-44 45 44 21 00 31 2e 30 32 00 81 00 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 00 00 00 00 89 00 00 00 00 00 00 00 00 00 00 
-                                                                                                            ^
-
-stack:
-
-
-stack: 
-
--state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 99 
-44 45 44 21 00 31 2e 30 32 00 79 24 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 89 25 00 00 00 81 38 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                         ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 99 
-44 45 44 21 00 31 2e 30 32 00 79 24 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 89 25 00 00 00 81 38 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                         ^
-
-stack:
-
-
-stack: 
-
--------------------------------------------------------------------------------------------
-
-
-state: running assembler 
-expected signature: DED! real signature DED! 
-expected version: 1.02 real version 1.02 
-ip: 99 
-44 45 44 21 00 31 2e 30 32 00 81 24 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 25 00 00 00 89 38 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-                                                                                                                                                                                                                                                                                                         ^
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 50 52 00 52 01 52 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 6f 64 65 64 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 00 81 60 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 61 00 00 00 89 74 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 
+^
 
 stack:
 
@@ -1091,13 +134,11 @@ stack:
 
 
 state: running processor 
-expected signature: DED! real signature in px
-in 0“§‰þ 
-expected version: 1.02 real version 
-in 0“§‰þ 
-ip: 10 
-69 6e 20 70 78 0d 0a 69 6e 20 61 78 0d 0a 69 6e 20 62 78 0d 0a 69 6e 20 63 78 0d 0a 70 75 73 68 20 62 78 0d 0a 70 75 73 68 20 62 78 0d 0a 6d 75 6c 0d 0a 70 75 73 68 20 61 78 0d 0a 70 75 73 68 20 63 78 0d 0a 6d 75 6c 0d 0a 70 75 73 68 20 34 0d 0a 6d 75 6c 0d 0a 73 75 62 0d 0a 64 62 20 64 65 64 21 0d 0a 70 75 73 68 20 30 0d 0a 6a 61 20 6e 6f 5f 72 6f 6f 74 73 3a 0d 0a 0d 0a 70 6f 70 0d 0a 0d 0a 73 71 72 74 0d 0a 70 6f 70 20 64 78 0d 0a 70 75 73 68 20 64 78 0d 0a 70 75 73 68 20 30 0d 0a 0d 0a 6a 65 20 6f 6e 65 5f 72 6f 6f 74 3a 0d 0a 6a 62 20 74 77 6f 5f 72 6f 6f 74 73 3a 0d 0a 0d 0a 6e 6f 5f 72 6f 6f 74 73 3a 0d 0a 68 6c 74 0d 0a 0d 0a 6f 6e 65 5f 72 6f 6f 74 3a 0d 0a 70 75 73 68 20 62 78 0d 0a 70 75 73 68 20 2d 31 0d 0a 6d 75 6c 0d 0a 70 75 73 68 20 61 78 0d 0a 64 69 76 0d 0a 70 75 73 68 20 32 0d 0a 64 69 76 0d 0a 6f 75 74 0d 0a 68 6c 74 0d 0a 0d 0a 74 77 6f 5f 72 6f 6f 74 73 3a 0d 0a 70 75 73 68 20 62 78 0d 0a 70 75 73 68 20 2d 31 0d 0a 6d 75 6c 0d 0a 70 75 73 68 20 64 78 0d 0a 73 75 62 0d 0a 70 75 73 68 20 61 78 0d 0a 64 69 76 0d 0a 70 75 73 68 20 32 0d 0a 64 69 76 0d 0a 6f 75 74 0d 0a 0d 0a 70 75 73 68 20 62 78 0d 0a 70 75 73 68 20 2d 31 0d 0a 6d 75 6c 0d 0a 70 75 73 68 20 64 78 0d 0a 61 64 64 0d 0a 70 75 73 68 20 61 78 0d 0a 64 69 76 0d 0a 70 75 73 68 20 32 0d 0a 64 69 76 0d 0a 6f 75 74 0d 0a 68 6c 74 0d 0a 
-                              ^
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 50 52 00 52 01 52 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 6f 64 65 64 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 00 81 60 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 61 00 00 00 89 74 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 
+^
 
 stack:
 
@@ -1131,6 +172,94 @@ yx: 0
 zx: 0
 
 ram memory: 
+
+-------------------------------------------------------------------------------------------
+
+
+state: running disassembler 
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 50 52 00 52 01 52 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 6f 64 65 64 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 00 81 60 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 61 00 00 00 89 74 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 
+^
+
+stack:
+
+
+stack: 
+
+-------------------------------------------------------------------------------------------
+
+
+state: running assembler 
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 00 00 00 00 00 00 00 00 00 00 
+^
+
+stack:
+
+
+stack: 
+
+-------------------------------------------------------------------------------------------
+
+
+state: running processor 
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 50 52 00 52 01 52 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 6f 64 65 64 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 00 81 60 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 61 00 00 00 89 74 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 
+^
+
+stack:
+
+
+stack: 
+ax: 0
+bx: 0
+cx: 0
+dx: 0
+ex: 0
+fx: 0
+gx: 0
+hx: 0
+ix: 0
+jx: 0
+kx: 0
+lx: 0
+mx: 0
+nx: 0
+ox: 0
+px: 10
+qx: 0
+rx: 0
+sx: 0
+tx: 0
+ux: 0
+vx: 0
+wx: 0
+xx: 0
+yx: 0
+zx: 0
+
+ram memory: 
+
+-------------------------------------------------------------------------------------------
+
+
+state: running disassembler 
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 50 52 00 52 01 52 02 1a 01 1a 01 28 1a 00 1a 02 28 19 04 00 00 00 28 30 6f 64 65 64 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 00 81 60 00 00 00 10 40 12 03 1a 03 19 00 00 00 00 91 61 00 00 00 89 74 00 00 00 08 1a 01 19 ff ff ff ff 28 1a 00 38 19 02 00 00 00 38 48 08 1a 01 19 ff ff ff ff 28 1a 03 30 1a 00 38 19 02 00 00 00 38 48 1a 01 19 ff ff ff ff 28 1a 03 20 1a 00 38 19 02 00 00 00 38 48 08 
+^
+
+stack:
+
+
+stack: 
 
 -------------------------------------------------------------------------------------------
 

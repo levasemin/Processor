@@ -243,8 +243,7 @@ void stack_destructor(Stack *stack)
 #ifdef STACK_DEBUG
 void dump(Stack *stack, const char* error_file_name, const char* error_func_name, int line_num)
 {
-    FILE *file = stderr;//fopen(DUMP_FILE_NAME, "a");
-    fprintf(file, "beging dumping stack \n");
+    FILE *file = fopen(DUMP_FILE_NAME, "a");
     unsigned long long state = 0;
 
     if (stack != nullptr)

@@ -808,6 +808,10 @@ DEF_CMD(DB, CMD_DB, 1,
         char text [MAX_SIZE_LINE];
     };
 
-    fprintf(dis_file, "db %s", (*(str *)(my_disassembler.code+ my_disassembler.ip)).text);
+    if (j == 1)
+    {
+        fprintf(dis_file, "db %s\n", (*(str *)(my_disassembler.code+ my_disassembler.ip)).text);
+    }
+    
     my_disassembler.ip += MAX_SIZE_LINE;
 })

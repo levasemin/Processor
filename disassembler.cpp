@@ -49,46 +49,49 @@ void fprintf_func_label_name(FILE*file, char operation[5], assembler *my_disasse
     }
 }
 
-void Initialize_disassembler(assembler *my_disassembler, int state, FILE *output)
+void Initialize_disassembler(assembler *my_disassembler, int state, FILE *byte_file)
 {
-    size_t count_elements = read_file(output, &my_disassembler->code);
+    size_t count_elements = read_file(byte_file, &my_disassembler->code);
 
     my_disassembler->state = state;
     my_disassembler->code = my_disassembler->code;
     my_disassembler->code_capacity = count_elements;
 }
 
-void disassemble(const char *output_file_name, const char *dis_file_name)
+void disassemble(const char *byte_file_name, const char *dis_file_name)
 {
-    assert(output_file_name != nullptr);
-    assert(dis_file_name    != nullptr);
-    assert(log_file_name    != nullptr);
+    assert(byte_file_name  != nullptr);
+    assert(dis_file_name   != nullptr);
+    assert(log_file_name   != nullptr);
 
-    FILE *output = fopen(output_file_name, "rb");
-    FILE *log_file = fopen(log_file_name, "a");
-    FILE *dis_file = fopen(dis_file_name, "w");
+    FILE *byte_file = fopen(byte_file_name, "rb");
+    FILE *log_file  = fopen(log_file_name, "ab");
+    FILE *dis_file  = fopen(dis_file_name, "wb");
 
-    assert(output != nullptr);
-    assert(log_file != nullptr);
-    assert(dis_file != nullptr);
+    assert(byte_file != nullptr);
+    assert(log_file  != nullptr);
+    assert(dis_file  != nullptr);
 
-    disassemble(output, dis_file, log_file);
+    disassemble(byte_file, dis_file, log_file);
 }
 
-void disassemble(FILE *output, FILE *dis_file, FILE *log_file)
+void disassemble(FILE *byte_file, FILE *dis_file, FILE *log_file)
 {
-    assert(output != nullptr);
-    assert(log_file != nullptr);
-    assert(dis_file != nullptr);
+    assert(byte_file != nullptr);
+    assert(log_file  != nullptr);
+    assert(dis_file  != nullptr);
 
     assembler my_disassembler = {};
 
-    Initialize_disassembler(&my_disassembler, RUNNING_DISASSEMBLER, output);
+    Initialize_disassembler(&my_disassembler, RUNNING_DISASSEMBLER, byte_file);
 
     Verification ver_target = {SIGNATURE, VERSION};
     Verification ver = *(Verification *)my_disassembler.code;
     
-    if (check_verification(&(my_disassembler.state),ver_target, ver))
+        dump_log_file(&my_disassembler, log_file);
+
+
+    if (check_verification(&(my_disassembler.state), ver_target, ver))
     {
         dump_log_file(&my_disassembler, log_file);
         assert (0);
@@ -100,7 +103,7 @@ void disassemble(FILE *output, FILE *dis_file, FILE *log_file)
 
         while (my_disassembler.ip < my_disassembler.code_capacity)
         {
-            DUMP_CONSOLE(((Flag *)(my_disassembler.code + my_disassembler.ip))->OPERATION)
+            //DUMP_CONSOLE(((Flag *)(my_disassembler.code + my_disassembler.ip))->OPERATION)
             
             if (my_disassembler.all_labels.count > 0 && j == 1)
             {
@@ -129,25 +132,25 @@ void disassemble(FILE *output, FILE *dis_file, FILE *log_file)
 
 static const char* default_dis_file_name    = "examples/disas_commands.txt";
 
-static const char* default_output_file_name = "examples/out_commands.txt";
+static const char* default_byte_file_name = "examples/out_commands.txt";
 
 int main(int argc, char *argv[]) {
     
     const char *dis_file_name = default_dis_file_name;
 
-    const char *output_file_name = default_output_file_name;
+    const char *byte_file_name = default_byte_file_name;
 
     if (argc >= 2)
     {
-        dis_file_name = argv[1];
+        byte_file_name = argv[1];
     }
 
     if (argc >= 3)
     {
-        output_file_name = argv[2];
+        dis_file_name = argv[2];
     }
 
-    disassemble(output_file_name, dis_file_name);
+    disassemble(byte_file_name, dis_file_name);
 }
 
 #undef DEF_CMD

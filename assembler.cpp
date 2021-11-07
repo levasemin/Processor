@@ -146,7 +146,7 @@ void prepeare_const(assembler *my_assembler, strings *data, char *cmd, Flag flag
         sscanf(data->start, "%s %s", cmd, text.text);                                                            
 
         *(Flag *)(my_assembler->code + (my_assembler->ip) ++) = flag;        
-        
+
         push_back_flag_value(str, text);
     }
 
@@ -364,9 +364,9 @@ void assemble(const char *input_file_name, const char *output_file_name)
     assert(input_file_name  != nullptr);
     assert(output_file_name != nullptr);
 
-    FILE *input    = fopen(input_file_name, "r");
+    FILE *input    = fopen(input_file_name, "rb");
     FILE *output   = fopen(output_file_name, "wb");
-    FILE *log_file = fopen(log_file_name, "a");
+    FILE *log_file = fopen(log_file_name, "ab");
 
     assert(input    != nullptr);
     assert(output   != nullptr);
@@ -387,6 +387,7 @@ void assemble(FILE *input, FILE *output, FILE *log_file)
     Initialize_assembler(&my_assembler, RUNNING_ASSEMBLER, ver, DEFAULT_CAPACITY_CODE, DEFAULT_CAPACITY_LABELS);
 
     strings *data = nullptr;
+                    dump_log_file(&my_assembler, log_file);
 
     size_t count_strings = get_prepeare_strings(input, &data);
 
