@@ -264,3 +264,61 @@ stack:
 -------------------------------------------------------------------------------------------
 
 
+state: running assembler 
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 00 00 00 00 00 00 00 00 00 00 
+^
+
+stack:
+
+
+stack: 
+
+-------------------------------------------------------------------------------------------
+
+
+state: running processor 
+expected signature: DED! real signature DED! 
+expected version: 1.02 real version 1.02 
+ip: 0 
+44 45 44 21 00 31 2e 30 32 00 52 0f 52 00 19 01 00 00 00 1a 00 19 01 00 00 00 89 20 00 00 00 08 b1 29 00 00 00 10 10 48 08 10 28 1a 00 19 01 00 00 00 30 12 00 1a 00 19 01 00 00 00 89 20 00 00 00 58 
+^
+
+stack:
+
+
+stack: 
+ax: 0
+bx: 0
+cx: 0
+dx: 0
+ex: 0
+fx: 0
+gx: 0
+hx: 0
+ix: 0
+jx: 0
+kx: 0
+lx: 0
+mx: 0
+nx: 0
+ox: 0
+px: 10
+qx: 0
+rx: 0
+sx: 0
+tx: 0
+ux: 0
+vx: 0
+wx: 0
+xx: 0
+yx: 0
+zx: 0
+
+ram memory: 
+
+-------------------------------------------------------------------------------------------
+
+

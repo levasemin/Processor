@@ -1,6 +1,6 @@
 #include "stack.h"
 //file name for dump error
-const char* DUMP_FILE_NAME = "C:\\Users\\levce\\CLionProjects\\Processor\\log\\log.txt";
+const char* DUMP_FILE_NAME = "log/log.txt";
 
 #ifdef STACK_DEBUG
 
