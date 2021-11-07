@@ -93,19 +93,19 @@ void processor(FILE *byte_file, FILE *log_file)
 
 
 
-static const char* default_byte_file_name = "examples/byte_commands.txt";
+static const char* default_byte_file_name = "examples/byte_rec.bin";
 
 int main(int argc, char *argv[]) 
 {
     
-    const char *out_file_name = default_byte_file_name;
+    const char *byte_file_name = default_byte_file_name;
 
     if (argc >= 2)
     {
-        out_file_name = argv[1];
+        byte_file_name = argv[1];
     }
 
-    processor(out_file_name);
+    processor(byte_file_name);
 }
 #undef DEF_CMD
 #undef PROCESSOR
