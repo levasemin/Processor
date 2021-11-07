@@ -159,7 +159,7 @@ void prepeare_const(assembler *my_assembler, strings *data, char *cmd, Flag flag
             flag = command_const(flag.OPERATION);
             *(Flag *)(my_assembler->code + (my_assembler->ip) ++) = flag;
 
-            push_back_flag_value(int, arg);
+            push_back_flag_value(cpu_type, arg);
         }
 
         else
@@ -359,27 +359,28 @@ void add_label(assembler *my_assembler, strings *data, char *label_arg)
     }
 }
 
-void assemble(const char *input_file_name, const char *output_file_name)
+void assemble(const char *input_file_name, const char *byte_file_name)
 {
     assert(input_file_name  != nullptr);
-    assert(output_file_name != nullptr);
+    assert(byte_file_name   != nullptr);
+    assert(byte_file_name   != nullptr);
 
-    FILE *input    = fopen(input_file_name, "rb");
-    FILE *output   = fopen(output_file_name, "wb");
+    FILE *input_file    = fopen(input_file_name, "rb");
+    FILE *byte_file   = fopen(byte_file_name, "wb");
     FILE *log_file = fopen(log_file_name, "ab");
 
-    assert(input    != nullptr);
-    assert(output   != nullptr);
+    assert(input_file    != nullptr);
+    assert(byte_file     != nullptr);
     assert(log_file != nullptr);
 
-    assemble(input, output, log_file);
+    assemble(input_file, byte_file, log_file);
 }
 
-void assemble(FILE *input, FILE *output, FILE *log_file)
+void assemble(FILE *input_file, FILE *byte_file, FILE *log_file)
 {
-    assert(input    != nullptr);
-    assert(output   != nullptr);
-    assert(log_file != nullptr);
+    assert(input_file    != nullptr);
+    assert(byte_file     != nullptr);
+    assert(log_file      != nullptr);
 
     Verification ver = {SIGNATURE, VERSION};
 
@@ -389,7 +390,7 @@ void assemble(FILE *input, FILE *output, FILE *log_file)
     strings *data = nullptr;
                     dump_log_file(&my_assembler, log_file);
 
-    size_t count_strings = get_prepeare_strings(input, &data);
+    size_t count_strings = get_prepeare_strings(input_file, &data);
 
     assert(data != nullptr);
 
@@ -440,21 +441,21 @@ void assemble(FILE *input, FILE *output, FILE *log_file)
         data -= count_strings;
     }
 
-    fwrite(my_assembler.code, sizeof(char), my_assembler.ip, output);
+    fwrite(my_assembler.code, sizeof(char), my_assembler.ip, byte_file);
     
-    fclose(input);
-    fclose(output);
+    fclose(input_file);
+    fclose(byte_file);
 }
 
 static const char* default_input_file_name    = "examples/square.txt";
 
-static const char* default_output_file_name   = "examples/out_commands.txt";
+static const char* default_byte_file_name   = "examples/out_commands.txt";
 
 int main(int argc, char *argv[]) {
     
     const char *input_file_name = default_input_file_name;
 
-    const char *output_file_name = default_output_file_name;
+    const char *byte_file_name = default_byte_file_name;
 
     if (argc >= 2)
     {
@@ -463,10 +464,10 @@ int main(int argc, char *argv[]) {
 
     if (argc >= 3)
     {
-        output_file_name = argv[2];
+        byte_file_name = argv[2];
     }
 
-    assemble(input_file_name, output_file_name);
+    assemble(input_file_name, byte_file_name);
 }
 
 #undef DEF_CMD

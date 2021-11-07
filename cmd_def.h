@@ -522,7 +522,7 @@ DEF_CMD(LOG, CMD_LOG, 0,
     ++my_disassembler.ip;
 })
 
-    DEF_CMD(HLT, CMD_HLT, 0,
+DEF_CMD(HLT, CMD_HLT, 0,
 {
     my_cpu.state = STOP_HLT;
 },

@@ -88,8 +88,6 @@ void disassemble(FILE *byte_file, FILE *dis_file, FILE *log_file)
     Verification ver_target = {SIGNATURE, VERSION};
     Verification ver = *(Verification *)my_disassembler.code;
     
-        dump_log_file(&my_disassembler, log_file);
-
 
     if (check_verification(&(my_disassembler.state), ver_target, ver))
     {
