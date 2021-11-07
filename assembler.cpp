@@ -254,6 +254,7 @@ if (strcmp(cmd, #Cmd) == 0 && num <= SIMPLE_COMMANDS)                           
             }                                                                                                           \
         }                                                                                                               \
     }                                                                                                                   \
+                                                                                                                        \
 else if (strcmp(cmd, #Cmd) == 0)                                                                                        \
     {                                                                                                                   \
         Flag flag = command_const(CMD_##Cmd);                                                                           \
@@ -323,6 +324,7 @@ int read_command(strings *data, char *cmd)
     {
         return -1;
     }
+
     int arg = 0;
 
     if (strchr(data->start, '#') != nullptr)
@@ -330,12 +332,14 @@ int read_command(strings *data, char *cmd)
         data->end = strchr(data->start, '#');
         *(data->end) = '\0';
     }
+
     int count_of_scan = sscanf(data->start, "%s %d", cmd, &arg);
 
     for (int i = 0; cmd[i] != '\0'; ++i)
     {
         cmd[i] = (char)toupper(cmd[i]);
     }
+
     return count_of_scan;
 }
 
@@ -402,6 +406,7 @@ void assemble(FILE *input_file, FILE *byte_file, FILE *log_file)
     for (int j = 0; j < 2; ++j)
     {
         my_assembler.ip = sizeof(Verification);
+        
         for (size_t i = 0; i < count_strings; ++i)
         {
             

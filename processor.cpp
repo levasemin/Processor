@@ -5,9 +5,9 @@ const int DEFAULT_PRESISION =  10;
 
 #define PROCESSOR
 
-#define DEF_CMD(Cmd, num, args, code_proc, code_dis) \
-    case CMD_##Cmd:                                  \
-    code_proc\
+#define DEF_CMD(Cmd, num, args, code_proc, code_dis)  \
+    case CMD_##Cmd:                                   \
+    code_proc                                         \
     break;
 
 #define DUMP_CONSOLE(operation)                       \
@@ -107,5 +107,6 @@ int main(int argc, char *argv[])
 
     processor(byte_file_name);
 }
+
 #undef DEF_CMD
 #undef PROCESSOR

@@ -130,7 +130,7 @@ void disassemble(FILE *byte_file, FILE *dis_file, FILE *log_file)
 
 static const char* default_dis_file_name    = "examples/disas_commands.txt";
 
-static const char* default_byte_file_name = "examples/out_commands.txt";
+static const char* default_byte_file_name   = "examples/out_commands.txt";
 
 int main(int argc, char *argv[]) {
     
