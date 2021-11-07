@@ -17,7 +17,7 @@
 #define CUR_BYTE        *(my_disassembler.code + my_disassembler.ip)
 #define CUR_INT         *(int *)(void *)(my_disassembler.code + my_disassembler.ip)
 
-#define CUR_INT_NEXT    CUR_INT; \
+#define CUR_INT_NEXT    CUR_INT;                                                                                        \
                         my_disassembler.ip += sizeof(int);
 #endif
 

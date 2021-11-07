@@ -16,13 +16,13 @@ const int DEFAULT_PRESISION =  10;
     dump_log_file(&my_processor, stderr);
 
 
-void Initialize_cpu_processor(cpu *my_cpu, int state, FILE *output);
+void Initialize_cpu_processor(cpu *my_cpu, int state, FILE *byte_file);
 
 
 
-void Initialize_cpu_processor(cpu *my_cpu, int state, FILE *output)
+void Initialize_cpu_processor(cpu *my_cpu, int state, FILE *byte_file)
 {
-    size_t count_elements = read_file(output, &my_cpu->code);
+    size_t count_elements = read_file(byte_file, &my_cpu->code);
 
     my_cpu->state = state;
     my_cpu->code = my_cpu->code;
@@ -36,29 +36,29 @@ void Initialize_cpu_processor(cpu *my_cpu, int state, FILE *output)
 }
 
 
-void processor(const char *output_file_name)
+void processor(const char *byte_file_name)
 {
-    assert(output_file_name != nullptr);
-    assert(log_file_name != nullptr);
+    assert(byte_file_name != nullptr);
+    assert(log_file_name  != nullptr);
 
-    FILE *output   = fopen(output_file_name, "rb");
-    FILE *log_file = fopen(log_file_name, "a");
+    FILE *byte_file = fopen(byte_file_name, "rb");
+    FILE *log_file  = fopen(log_file_name, "a");
 
-    assert(output != nullptr);
+    assert(byte_file != nullptr);
     assert(log_file != nullptr);
 
-    processor(output, log_file);
+    processor(byte_file, log_file);
 }
 
 
-void processor(FILE *output, FILE *log_file)
+void processor(FILE *byte_file, FILE *log_file)
 {     
-    assert(output != nullptr);
+    assert(byte_file != nullptr);
     assert(log_file != nullptr);
 
     cpu my_cpu = {};
 
-    Initialize_cpu_processor(&my_cpu, RUNNING_PROCESSOR, output);
+    Initialize_cpu_processor(&my_cpu, RUNNING_PROCESSOR, byte_file);
 
     Verification ver_target = {SIGNATURE, VERSION};
     Verification ver = {SIGNATURE, VERSION};
@@ -93,12 +93,12 @@ void processor(FILE *output, FILE *log_file)
 
 
 
-static const char* default_output_file_name = "examples/out_commands.txt";
+static const char* default_byte_file_name = "examples/byte_commands.txt";
 
 int main(int argc, char *argv[]) 
 {
     
-    const char *out_file_name = default_output_file_name;
+    const char *out_file_name = default_byte_file_name;
 
     if (argc >= 2)
     {
