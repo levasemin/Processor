@@ -1,0 +1,138 @@
+error: stack is empty; error file: stack.cpp; error function: pop_stack; error line: 195; stack name: (null)
+Information about stack struct
+
+excepted first struct canary:  %15IuX;      real first struck canary:  853463865X
+excepted second struct canary: %15IuX;      real second struck canary: 853463865X
+excepted struct hash:          %15IuX;       real struct hash:         1145848343
+
+
+Information about stack
+
+excepted first stack canary:   4086338896;           real first stack canary:  4086338896
+excepted second stack canary:  4086338896;           real second stack canary: 4086338896
+excepted stack hash          2882;           real stack hash:        2882
+stack size:    0
+capacity size: 2
+stack states   2049
+Stack elements:
+[0] element: 0
+[1] element: 0
+-------------------------------------------------------------------------------
+
+
+
+error: stack is empty; error file: stack.cpp; error function: pop_stack; error line: 195; stack name: (null)
+Information about stack struct
+
+excepted first struct canary:  %15IuX;      real first struck canary:  853463865X
+excepted second struct canary: %15IuX;      real second struck canary: 853463865X
+excepted struct hash:          %15IuX;       real struct hash:         2274002455
+
+
+Information about stack
+
+excepted first stack canary:   518518096;           real first stack canary:  518518096
+excepted second stack canary:  518518096;           real second stack canary: 518518096
+excepted stack hash          2438;           real stack hash:        2438
+stack size:    0
+capacity size: 2
+stack states   2049
+Stack elements:
+[0] element: 0
+[1] element: 0
+-------------------------------------------------------------------------------
+
+
+
+error: stack is empty; error file: stack.cpp; error function: pop_stack; error line: 195; stack name: (null)
+Information about stack struct
+
+excepted first struct canary:  %15IuX;      real first struck canary:  853463865X
+excepted second struct canary: %15IuX;      real second struck canary: 853463865X
+excepted struct hash:          %15IuX;       real struct hash:         1817995799
+
+
+Information about stack
+
+excepted first stack canary:   2996630864;           real first stack canary:  2996630864
+excepted second stack canary:  2996630864;           real second stack canary: 2996630864
+excepted stack hash          874;           real stack hash:        874
+stack size:    0
+capacity size: 2
+stack states   2049
+Stack elements:
+[0] element: 0
+[1] element: 0
+-------------------------------------------------------------------------------
+
+
+
+error: stack is empty; error file: stack.cpp; error function: pop_stack; error line: 195; stack name: (null)
+Information about stack struct
+
+excepted first struct canary:  %15IuX;      real first struck canary:  853463865X
+excepted second struct canary: %15IuX;      real second struck canary: 853463865X
+excepted struct hash:          %15IuX;       real struct hash:         66716183
+
+
+Information about stack
+
+excepted first stack canary:   396928336;           real first stack canary:  396928336
+excepted second stack canary:  396928336;           real second stack canary: 396928336
+excepted stack hash          1282;           real stack hash:        1282
+stack size:    0
+capacity size: 2
+stack states   2049
+Stack elements:
+[0] element: 0
+[1] element: 0
+-------------------------------------------------------------------------------
+
+
+
+error: stack is empty; error file: stack.cpp; error function: pop_stack; error line: 195; stack name: (null)
+Information about stack struct
+
+excepted first struct canary:  %15IuX;      real first struck canary:  853463865X
+excepted second struct canary: %15IuX;      real second struck canary: 853463865X
+excepted struct hash:          %15IuX;       real struct hash:         3958499863
+
+
+Information about stack
+
+excepted first stack canary:   4268508496;           real first stack canary:  4268508496
+excepted second stack canary:  4268508496;           real second stack canary: 4268508496
+excepted stack hash          2794;           real stack hash:        2794
+stack size:    0
+capacity size: 2
+stack states   2049
+Stack elements:
+[0] element: 0
+[1] element: 0
+-------------------------------------------------------------------------------
+
+
+
+error: stack is empty; error file: stack.cpp; error function: pop_stack; error line: 195; stack name: (null)
+Information about stack struct
+
+excepted first struct canary:  %15IuX;      real first struck canary:  853463865X
+excepted second struct canary: %15IuX;      real second struck canary: 853463865X
+excepted struct hash:          %15IuX;       real struct hash:         66322967
+
+
+Information about stack
+
+excepted first stack canary:   3237369168;           real first stack canary:  3237369168
+excepted second stack canary:  3237369168;           real second stack canary: 3237369168
+excepted stack hash          770;           real stack hash:        770
+stack size:    0
+capacity size: 2
+stack states   2049
+Stack elements:
+[0] element: 0
+[1] element: 0
+-------------------------------------------------------------------------------
+
+
+

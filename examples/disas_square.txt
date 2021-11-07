@@ -1,0 +1,57 @@
+in
+in ax
+in bx
+in cx
+push bx
+push bx
+mul
+push ax
+push cx
+mul
+push 4
+mul
+sub
+db ded!
+push 0
+ja 1:
+pop
+sqrt
+pop dx
+push dx
+push 0
+je 2:
+jb 3:
+1:
+hlt
+2:
+push bx
+push -1
+mul
+push ax
+div
+push 2
+div
+out
+hlt
+3:
+push bx
+push -1
+mul
+push dx
+sub
+push ax
+div
+push 2
+div
+out
+push bx
+push -1
+mul
+push dx
+add
+push ax
+div
+push 2
+div
+out
+hlt
