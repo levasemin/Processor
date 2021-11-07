@@ -324,10 +324,13 @@ int read_command(strings *data, char *cmd)
         return -1;
     }
     int arg = 0;
-    int count_of_scan = sscanf(data->start, "%s %d", cmd, &arg);
 
-    if (strchr(cmd, '#') != nullptr)
-        *(strchr(cmd, '#')) = '\0';
+    if (strchr(data->start, '#') != nullptr)
+    {
+        data->end = strchr(data->start, '#');
+        *(data->end) = '\0';
+    }
+    int count_of_scan = sscanf(data->start, "%s %d", cmd, &arg);
 
     for (int i = 0; cmd[i] != '\0'; ++i)
     {
